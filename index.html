@@ -12,14 +12,15 @@
     <style>
         :root {
             --brand-primary: #6366f1;
-            --bg-main: #f8fafc;
+            --sidebar-dark: #0f172a;
+            --bg-canvas: #f8fafc;
         }
         body {
             font-family: 'Plus Jakarta Sans', sans-serif;
             margin: 0;
             padding: 0;
             overflow: hidden;
-            background-color: var(--bg-main);
+            background-color: var(--bg-canvas);
             color: #1e293b;
         }
         ::-webkit-scrollbar {
@@ -39,16 +40,18 @@
         .panel-transition {
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
-        .content-shadow {
-            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.05), 0 10px 10px -5px rgba(0, 0, 0, 0.02);
+        .glass-header {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(226, 232, 240, 0.8);
         }
-        .nav-gradient {
-            background: linear-gradient(180deg, #1e293b 0%, #0f172a 100%);
+        .card-shadow {
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
         }
-        .glass-effect {
-            background: rgba(255, 255, 255, 0.8);
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
+        .reply-focus:focus-within {
+            box-shadow: 0 10px 15px -3px rgba(99, 102, 241, 0.1), 0 4px 6px -2px rgba(99, 102, 241, 0.05);
+            border-color: #6366f1;
         }
     </style>
 <script type="importmap">
@@ -64,7 +67,6 @@
 </head>
 <body>
     <div id="root"></div>
-    <!-- Fixed: Adding script module entry point for browser execution -->
     <script type="module" src="index.tsx"></script>
 </body>
 </html>
